@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import SkiRunForm from './SkiRunForm'
-import Login from './Login'
+import Login from './login'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 const App = () => {
