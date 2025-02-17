@@ -1,0 +1,38 @@
+{
+  "name": "a4-maeve-norton",
+  "version": "1.0.0",
+  "description": "Webware Assignment 4: Express, React, & Passport GitHub Authentication",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "concurrently \"npm run dev --prefix client\" \"npm run start\"",
+    "build": "npm run build --prefix client",
+    "deploy": "npm run build && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cs4241-c25/a4-Maeve-Norton.git"
+  },
+  "author": "Maeve Norton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cs4241-c25/a4-Maeve-Norton/issues"
+  },
+  "homepage": "https://github.com/cs4241-c25/a4-Maeve-Norton#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "connect-flash": "^0.1.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "mongoose": "^8.10.1",
+    "passport": "^0.7.0",
+    "passport-github": "^1.1.0",
+    "passport-local": "^1.0.0",
+    "react-router-dom": "^7.1.5"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
