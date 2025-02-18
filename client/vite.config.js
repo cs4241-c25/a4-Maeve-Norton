@@ -5,7 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': 'http://localhost:3000',
+      '/api': 'https://a4-maeve-norton.glitch.me',
     },
+  },
+  build: {
+    outDir: 'dist',
   },
 })
