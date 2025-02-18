@@ -30,7 +30,7 @@ const Login = () => {
                                 </p>
 
                                 <div className="text-center mt-4">
-                                    <a href="http://localhost:3000/auth/github" className="btn My-Color-Theme-2-hex text-white w-100" style={{ fontSize: '1.25rem', backgroundColor: '#2A6136' }}>
+                                    <a href="https://a4-maeve-norton.glitch.me/auth/github" className="btn My-Color-Theme-2-hex text-white w-100" style={{ fontSize: '1.25rem', backgroundColor: '#2A6136' }}>
                                         Login with GitHub
                                     </a>
                                 </div>
@@ -44,3 +44,4 @@ const Login = () => {
 }
 
 export default Login
+
