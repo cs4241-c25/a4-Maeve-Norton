@@ -21,7 +21,7 @@ mongoose.connect("mongodb+srv://mnorton2:V2HScJ3DrPsgJUlH@cs4241.hohzt.mongodb.n
     })
 
 // Middleware
-app.use(cors({ origin: 'http://localhost:5173', credentials: true }))
+app.use(cors({ origin: 'https://a4-maeve-norton.glitch.me', credentials: true }))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(session({
@@ -48,7 +48,7 @@ const User = mongoose.model("User", userSchema)
 passport.use(new GitHubStrategy({
     clientID: process.env.GitHubClientID,
     clientSecret: process.env.GitHubClientSecret,
-    callbackURL: "http://localhost:3000/auth/github/callback"
+    callbackURL: "https://a4-maeve-norton.glitch.me/auth/github/callback"
 }, async (accessToken, refreshToken, profile, done) => {
     try {
         let user = await User.findOne({ githubId: profile.id })
@@ -93,15 +93,14 @@ app.get('/auth/github/callback',
 )
 
 // Logout
-app.get("/logout", (req, res, next) => {
-    req.logout((err) => {
-        if (err) return next(err)
-        req.session.destroy(() => {
-            res.redirect("/")
-        })
+app.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.status(500).send('Error logging out')
+        }
+        res.redirect('/login')
     })
 })
-
 
 //-------------------------------------------------------------------------------------------------------------------------------------------------
 
