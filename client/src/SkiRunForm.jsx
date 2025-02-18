@@ -22,7 +22,7 @@ const SkiRunForm = () => {
     }, [])
 
     const checkAuthentication = async () => {
-        const response = await fetch('http://localhost:3000/auth/check', { credentials: 'include' })
+        const response = await fetch('https://a4-maeve-norton.glitch.me/auth/check', { credentials: 'include' })
         const data = await response.json()
         if (data.status !== 'ok') {
             setIsAuthenticated(false)
@@ -31,7 +31,7 @@ const SkiRunForm = () => {
     }
 
     const fetchSkiRuns = async () => {
-        const response = await fetch('http://localhost:3000/skiRuns', { credentials: 'include' })
+        const response = await fetch('https://a4-maeve-norton.glitch.me/skiRuns', { credentials: 'include' })
         const data = await response.json()
         setSkiRuns(data)
     }
@@ -75,7 +75,7 @@ const SkiRunForm = () => {
     }
 
     const handleLogout = async () => {
-        await fetch('http://localhost:3000/logout', { credentials: 'include' })
+        await fetch('/logout', { credentials: 'include' })
         setIsAuthenticated(false)
         navigate('/')
     }
